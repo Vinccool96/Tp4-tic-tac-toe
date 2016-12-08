@@ -1,5 +1,7 @@
 package controleur;
 
+import java.util.ArrayList;
+
 import artificialIntelligence.AI;
 import artificialIntelligence.Aleatoire;
 import artificialIntelligence.Facile;
@@ -74,7 +76,7 @@ public class ControleurTicTacToe {
 	private TicTacToe tableDeJeu;
 
 	private Chronometre chrono;
-	Button[][] tabImageView;
+	Button[][] tabButtons;
 
 	public ControleurTicTacToe() {
 
@@ -148,10 +150,29 @@ public class ControleurTicTacToe {
 		chrono = new Chronometre(isGameOver, lblChronometre);
 		Button[][] tab = { { btnHG, btnHC, btnHD }, { btnCG, btnCC, btnCD }, { btnBG, btnBC, btnBD } };
 
-		tabImageView = tab;
-		tableDeJeu = new TicTacToe(tabImageView, chrono, isGameOver, lblDifficulte);
+		tabButtons = tab;
+		tableDeJeu = new TicTacToe(tabButtons, chrono, isGameOver, lblDifficulte);
 		tableDeJeu.setAdversaire(new Aleatoire(tableDeJeu));
-		ModificationInterface mI=new ModificationInterface(tab);
+		ModificationInterface mI = new ModificationInterface(tab);
+		ArrayList<Button> buttons = new ArrayList<>();
+
+		for (Button[] buttonsList : tabButtons) {
+			for (Button button : buttonsList) {
+				buttons.add(button);
+			}
+		}
+
+		mI.changerCouleurButtons(buttons);
+
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		tableDeJeu.reset();
+
 	}
 
 	@FXML
