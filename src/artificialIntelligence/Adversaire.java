@@ -3,24 +3,22 @@ package artificialIntelligence;
 import java.util.ArrayList;
 
 import modele.Emplacement;
-import modele.Table;
+import modele.TicTacToe;
 
 public class Adversaire {
 
-	protected Table tableDeJeu;
+	protected TicTacToe tableDeJeu;
 	protected ArrayList<Emplacement> emplacementsVides;
 
-	public Adversaire(Table tableDeJeu) {
+	public Adversaire(TicTacToe tableDeJeu) {
 		this.tableDeJeu = tableDeJeu;
 	}
 
-	public void jouer() {
-
+	public void jouer(TicTacToe ticTacToe) {
 	}
 
 	protected void updateListe() {
-		tableDeJeu.setEmplacementsVides();
-		emplacementsVides = tableDeJeu.listeEmplacementsVides();
+		emplacementsVides = tableDeJeu.getListesEmplacementVides();
 	}
 
 }

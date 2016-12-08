@@ -1,32 +1,22 @@
 package artificialIntelligence;
 
-import artificialIntelligence.Adversaire;
 import modele.Emplacement;
-import modele.Table;
+import modele.TicTacToe;
 
 public class AI extends Adversaire {
 
-	public AI(Table tableDeJeu) {
+	private MinimaxFinder finder;
+
+	public AI(TicTacToe tableDeJeu) {
 		super(tableDeJeu);
-
 	}
 
-	private Emplacement enplacementDecide() {
-
-		return null;
-	}
-
-	public void jouer() {
-		this.updateListe();
-		Emplacement emplacement;
-	}
-
-	private int minimax(int profondeur, int playerNumber) {
-		if (tableDeJeu.isItFinished() || profondeur == 0) {
-
-			return 0;
-		} else {
-			return 0;
+	@Override
+	public void jouer(TicTacToe nouvelleTableDeJeu) {
+		finder = new MinimaxFinder(nouvelleTableDeJeu);
+		Emplacement move = finder.returnNextMove();
+		if (move != null) {
+			tableDeJeu.getTable()[move.getX()][move.getY()] = 1;
 		}
 	}
 

@@ -1,10 +1,10 @@
 package artificialIntelligence;
 
-import modele.Table;
+import modele.TicTacToe;
 
 public class Facile extends Adversaire{
 
-	public Facile(Table tableDeJeu) {
+	public Facile(TicTacToe tableDeJeu) {
 		super(tableDeJeu);
 		
 	}

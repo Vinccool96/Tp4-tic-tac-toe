@@ -1,0 +1,29 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.pane{
+    -fx-background-color: #A9D0F5;
+}
+
+.button-bottom {
+	-fx-background-color: #B1DEC2;
+	-fx-border-color: black;
+	-fx-border-width: 1.0;
+}
+
+.border-pane{
+	-fx-background-color: #F0F8FF;
+}
+
+.label-difficulty{
+	-fx-text-fill: #0076A3;
+	-fx-font-size: 40.0;
+}
+
+.label-time{
+	-fx-text-fill: #7F00FF;
+	-fx-font-size: 40.0;
+}
+
+.button-others{
+	-fx-background-color: #DDDDDD;
+}

@@ -25,11 +25,6 @@ public class Emplacement {
 		this.y = y;
 	}
 
-	@Override
-	public String toString() {
-		return "[" + x + ", " + y + "]";
-	}
-
 	public boolean isEqual(Emplacement e) {
 		return this.getX() == e.getX() && this.getY() == e.getY();
 	}

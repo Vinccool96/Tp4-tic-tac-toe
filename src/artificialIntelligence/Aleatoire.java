@@ -1,28 +1,27 @@
 package artificialIntelligence;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import modele.Emplacement;
-import modele.Table;
+import modele.TicTacToe;
 
 public class Aleatoire extends Adversaire {
 
 	Random randomizer = new Random();
 
-	public Aleatoire(Table tableDeJeu) {
+	public Aleatoire(TicTacToe tableDeJeu) {
 		super(tableDeJeu);
-		emplacementsVides = tableDeJeu.listeEmplacementsVides();
+		emplacementsVides = tableDeJeu.getListesEmplacementVides();
 	}
 
-	private Emplacement emplacementJoue(ArrayList<Emplacement> emplacementsVides) {
-		return emplacementsVides.get(randomizer.nextInt(emplacementsVides.size()));
+	private Emplacement emplacementJoue() {
+		return this.emplacementsVides.get(randomizer.nextInt(emplacementsVides.size()));
 	}
 
-	public void jouer() {
+	public void jouer(TicTacToe ticTacToe) {
 		this.updateListe();
-		Emplacement emplacement = emplacementJoue(emplacementsVides);
-		tableDeJeu.getTableTicTacToe()[emplacement.getX()][emplacement.getY()] = 2;
+		Emplacement emplacement = emplacementJoue();
+		tableDeJeu.getTable()[emplacement.getX()][emplacement.getY()] = 1;
 	}
 
 }
